@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class ControlPanel extends JPanel implements ActionListener {
 
-    private JButton btnProcess, btnSave, btnLoad;
+    private JButton btnProcess, btnSave, btnLoad, btnReset;
     private DrawPanel drawPanel;
     private JFileChooser jf = new JFileChooser("kordinat");
     private JTextField txtCluster;
@@ -78,6 +78,10 @@ public class ControlPanel extends JPanel implements ActionListener {
         btnProcess.addActionListener(this);
         this.add(btnProcess);
 
+        btnReset = new JButton("Clear");
+        btnReset.addActionListener(this);
+        this.add(btnReset);
+
         checkPrint = new JCheckBox();
         this.add(checkPrint);
 
@@ -124,6 +128,7 @@ public class ControlPanel extends JPanel implements ActionListener {
         if(ob.equals(btnLoad)){
             int choose = jf.showOpenDialog(this);
             if (choose == JFileChooser.APPROVE_OPTION) {
+                this.drawPanel.reset();
                 String path = jf.getSelectedFile().getAbsolutePath();
                 JSONParser jsonParser = new JSONParser();
                 ArrayList<Point> points = new ArrayList<>();
@@ -181,6 +186,11 @@ public class ControlPanel extends JPanel implements ActionListener {
                 drawPanel.setColorValues(listOfColor);
                 drawPanel.repaint();
             }
+        }
+
+        if (ob.equals(btnReset)){
+            this.drawPanel.reset();
+            this.drawPanel.repaint();
         }
     }
 }

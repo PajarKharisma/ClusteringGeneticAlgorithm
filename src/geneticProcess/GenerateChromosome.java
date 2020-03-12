@@ -66,11 +66,3 @@ public class GenerateChromosome {
         return this.populasi;
     }
 }
-
-class Generate implements Runnable{
-
-    @Override
-    public void run() {
-
-    }
-}

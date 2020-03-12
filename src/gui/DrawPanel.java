@@ -81,4 +81,9 @@ public class DrawPanel extends JPanel {
     public void setClusterIndex(ArrayList<Integer> clusterIndex) {
         this.clusterIndex = clusterIndex;
     }
+
+    public void reset(){
+        this.points.clear();
+        this.colorValues.clear();
+    }
 }

@@ -64,7 +64,6 @@ public class GeneticAlgorithm {
         int iterasi = 0;
         int convergen = 0;
         while (convergen < HyperParameter.CONVERGEN){
-            iterasi++;
             for (Chromosome chromosome:populasi) {
                 FitnessValueCalculate fitnessValueCalculate = new FitnessValueCalculate();
                 double val = fitnessValueCalculate.getFitnessValue(points, chromosome.getGen(), clusterAmount);
@@ -137,7 +136,6 @@ public class GeneticAlgorithm {
 
             populasi.addAll(offsprings);
             populasi.sort(new SortPopulasi());
-            convergen++;
 
 //            log += printPopulasi.listToString(populasi, "POPULASI BARU");
 //            printPopulasi.print(populasi, "POPULASI BARU");
@@ -152,6 +150,7 @@ public class GeneticAlgorithm {
                 gen = populasi.get(0).getGen();
                 convergen = 0;
             }
+            iterasi++;
         }
 
 //        printPopulasi.print(populasi, "populasi terbaik");
