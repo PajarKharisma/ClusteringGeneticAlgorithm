@@ -1,5 +1,5 @@
 Selection : Best
-Crossover : One Point
+Crossover : Uniform
 Mutation : Replacement
 Representation : Locus
 =================================================================
