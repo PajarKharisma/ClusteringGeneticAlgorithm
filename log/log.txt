@@ -3,3 +3,4 @@ Crossover : One Point
 Mutation : Replacement
 Representation : Locus
 =================================================================
+berubah
